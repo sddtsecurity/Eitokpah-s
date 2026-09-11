@@ -1,0 +1,263 @@
+```css
+/* =========================
+   GENERAL PAGE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff0f6;
+    color: #4a1740;
+}
+
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+.navbar {
+    background: #d63384;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h2 {
+    font-size: 22px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ffd6ea;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #ff69b4,
+        #d63384,
+        #8e245d
+    );
+
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.welcome {
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero h3 {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.hero-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    background: white;
+    color: #d63384;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.hero-button:hover {
+    background: #ffd6ea;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.about,
+.service,
+.gallery,
+.contact {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.about {
+    background: white;
+}
+
+.about h2,
+.service h2,
+.gallery h2,
+.contact h2 {
+    color: #d63384;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.about p,
+.gallery p,
+.contact p {
+    max-width: 800px;
+    margin: 15px auto;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+
+/* =========================
+   SERVICE CARDS
+========================= */
+
+.service {
+    background: #ffe4f0;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: white;
+    width: 280px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    color: #d63384;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    line-height: 1.6;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    background: white;
+    min-height: 300px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: #ffe4f0;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #8e245d;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    line-height: 2;
+}
+
+
+/* =========================
+   MOBILE PHONE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero h3 {
+        font-size: 20px;
+    }
+
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 90%;
+    }
+}
+```
