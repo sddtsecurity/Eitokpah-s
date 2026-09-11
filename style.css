@@ -1,12 +1,11 @@
-```css
 /* =========================
    GENERAL PAGE
 ========================= */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -15,29 +14,77 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: #fff0f6;
-    color: #4a1740;
+    color: #5a1740;
+
+    /* Moving pink background */
+    background: linear-gradient(
+        120deg,
+        #8e245d,
+        #d63384,
+        #ff69b4,
+        #ffb6c1,
+        #ffc0cb,
+        #f78fb3,
+        #c2185b
+    );
+
+    background-size: 500% 500%;
+
+    animation: pinkWave 12s ease infinite;
 }
 
 
 /* =========================
-   NAVIGATION BAR
+   PINK WAVE ANIMATION
+========================= */
+
+@keyframes pinkWave {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 100%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =========================
+   NAVIGATION
 ========================= */
 
 .navbar {
-    background: #d63384;
-    color: white;
-    padding: 20px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 40px;
+
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
 }
 
 .navbar h2 {
-    font-size: 22px;
+    color: #c2185b;
 }
 
 .nav-links {
@@ -46,46 +93,35 @@ body {
 }
 
 .nav-links a {
-    color: white;
     text-decoration: none;
+    color: #c2185b;
     font-weight: bold;
+
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #ffd6ea;
+    color: #ff69b4;
 }
 
 
 /* =========================
-   HERO SECTION
+   HERO
 ========================= */
 
 .hero {
     min-height: 90vh;
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
     text-align: center;
 
-    background: linear-gradient(
-        135deg,
-        #ff69b4,
-        #d63384,
-        #8e245d
-    );
+    padding: 40px 20px;
 
     color: white;
-    padding: 40px 20px;
-}
-
-.hero-content {
-    max-width: 800px;
-}
-
-.welcome {
-    letter-spacing: 3px;
-    font-size: 14px;
-    margin-bottom: 20px;
 }
 
 .hero h1 {
@@ -94,14 +130,12 @@ body {
 }
 
 .hero h3 {
-    font-size: 24px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    font-size: 25px;
 }
 
 .hero p {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 20px;
+    margin: 15px 0 30px;
 }
 
 
@@ -109,19 +143,28 @@ body {
    BUTTON
 ========================= */
 
-.hero-button {
+.button {
     display: inline-block;
-    margin-top: 30px;
+
     padding: 14px 30px;
+
     background: white;
-    color: #d63384;
+    color: #c2185b;
+
     text-decoration: none;
+
     border-radius: 30px;
+
     font-weight: bold;
+
+    transition: 0.3s;
 }
 
-.hero-button:hover {
-    background: #ffd6ea;
+.button:hover {
+    background: #c2185b;
+    color: white;
+
+    transform: scale(1.05);
 }
 
 
@@ -129,32 +172,29 @@ body {
    SECTIONS
 ========================= */
 
-.about,
-.service,
-.gallery,
-.contact {
-    padding: 80px 8%;
+.section {
+    margin: 30px auto;
+    padding: 60px 30px;
+
+    max-width: 1100px;
+
     text-align: center;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.15);
 }
 
-.about {
-    background: white;
-}
-
-.about h2,
-.service h2,
-.gallery h2,
-.contact h2 {
-    color: #d63384;
+.section h2 {
+    color: #c2185b;
     font-size: 35px;
     margin-bottom: 25px;
 }
 
-.about p,
-.gallery p,
-.contact p {
-    max-width: 800px;
-    margin: 15px auto;
+.section p {
     line-height: 1.8;
     font-size: 17px;
 }
@@ -164,52 +204,81 @@ body {
    SERVICE CARDS
 ========================= */
 
-.service {
-    background: #ffe4f0;
-}
-
-.service-container {
+.cards {
     display: flex;
     justify-content: center;
     gap: 25px;
+
     flex-wrap: wrap;
-    margin-top: 40px;
+
+    margin-top: 30px;
 }
 
-.service-card {
-    background: white;
+.card {
     width: 280px;
+
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+    background: #ffe4f0;
+
+    border: 3px solid #ff69b4;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
 }
 
-.service-card h3 {
-    color: #d63384;
+.card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 10px 25px rgba(214, 51, 132, 0.3);
+}
+
+.card h3 {
+    color: #c2185b;
     margin-bottom: 15px;
 }
 
-.service-card p {
-    line-height: 1.6;
-}
-
 
 /* =========================
-   GALLERY
+   BOSS PHOTO
 ========================= */
 
-.gallery {
-    background: white;
-    min-height: 300px;
+.boss-photo {
+    display: block;
+
+    width: 300px;
+    max-width: 90%;
+
+    margin: 30px auto;
+
+    border: 8px solid #ff69b4;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(214, 51, 132, 0.5);
+
+    transition: 0.4s;
 }
 
+.boss-photo:hover {
+    transform: scale(1.03);
 
-/* =========================
-   CONTACT
-========================= */
+    box-shadow:
+        0 15px 40px rgba(194, 24, 91, 0.6);
+}
 
-.contact {
-    background: #ffe4f0;
+.gallery h3 {
+    color: #c2185b;
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.gallery p {
+    color: #d63384;
+    font-weight: bold;
 }
 
 
@@ -218,11 +287,19 @@ body {
 ========================= */
 
 footer {
-    background: #8e245d;
-    color: white;
     text-align: center;
-    padding: 30px 20px;
-    line-height: 2;
+
+    padding: 35px 20px;
+
+    color: white;
+
+    background: rgba(90, 23, 64, 0.85);
+
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 8px;
 }
 
 
@@ -230,11 +307,13 @@ footer {
    MOBILE PHONE
 ========================= */
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
     .navbar {
         flex-direction: column;
         gap: 15px;
+
+        padding: 15px;
     }
 
     .nav-links {
@@ -251,13 +330,21 @@ footer {
         font-size: 20px;
     }
 
-    .service-container {
-        flex-direction: column;
-        align-items: center;
+    .hero p {
+        font-size: 16px;
     }
 
-    .service-card {
-        width: 90%;
+    .section {
+        margin: 20px 10px;
+        padding: 40px 20px;
     }
+
+    .boss-photo {
+        width: 280px;
+    }
+
 }
 ```
+stroke="currentColor" stroke-linejoin="round" stroke-width="2"/><text x="-12" y="32" font-size="5" font-family="monospace" fill="currentColor">Built on CodePen</text></svg>');
+}
+
